@@ -56,4 +56,91 @@ public class Main{
     }
 }
 --------------------------------------------------------------
-3)PRIME BETWEEN RANGR
+3)FIBONACCI SERIES 
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        int first=0;
+        int next=0;
+        int second=1;
+        for(int i=first;i<=n;i++){
+            next=first+second;
+            System.out.print(first+" ");
+            second=first;
+            first=next;
+        }
+    }
+}
+---------------------------------------------------------------
+4) REVERSE OF DIGITS
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        int rev=0;
+        int rem=0;
+        while(n!=0){
+            rem=n%10;
+            rev=rev*10+rem;
+            n=n/10;
+        }
+        System.out.print(rev);
+    }
+}
+-----------------------------------------------------------------
+5) PERFECT SQUARE
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        int count=0;
+        for(int i=1;i<=n;i++){
+            if(i*i==n){
+                
+                count=1;
+            }
+        }
+        if(count==1){
+            System.out.print("yes");
+        }
+        else{
+            System.out.print("no");
+        }
+    }
+}
+-----------------------------------------------------------------
+6) PERFECT SQUARE BETWEEN RANGE(ARRAY)
+import java.util.Scanner;
+public class main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n1=obj.nextInt();
+        int n2=obj.nextInt();
+        int[] arr=new int[n2];
+        int k=0;
+        while(n1!=n2){
+            for(int i=1;i<=n1;i++){
+                if(i*i==n1){
+                    arr[k]=n1;
+                    k++;
+                }
+            }
+            n1++;
+        }
+        int space=0;
+        for(int i=0;i<k;i++){
+            if(space==0){
+                System.out.print(arr[i]);
+                space=1;
+            }
+            else{
+            System.out.print(" "+arr[i]);
+        }
+        }
+    }
+}
+--------------------------------------------------------------
