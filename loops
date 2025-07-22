@@ -1,0 +1,59 @@
+1) PRIME NUMBER OR NOT
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        int count=0;
+        for(int i=1;i<=n;i++){
+            if(n%i==0){
+                count=count+1;
+            }
+            
+        }
+        if(count==2){
+            System.out.print("yes");
+        }
+        else{
+            System.out.print("no");
+        }
+    }
+
+-------------------------------------------------------
+2) PRIME BETWEEN RANGE AND STORED IN A ARRAY 
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+        int n1=obj.nextInt();
+        int n2=obj.nextInt();
+        int space=0;
+        int count=0;
+        int[] prime=new int[n2];
+        int index=0;
+        while(n1!=n2){
+            for(int i=1;i<=n1;i++){
+                if(n1%i==0){
+                    count=count+1;
+                }
+            }
+            if(count==2){
+                    prime[index]=n1;
+                    index++;
+                }
+            count=0;
+            n1=n1+1;
+        }
+        for(int i=0;i<index;i++){
+            if(space==0){
+            System.out.print(prime[i]);
+            space=1;
+        }
+        else{
+            System.out.print(" "+prime[i]);
+        }
+        }
+    }
+}
+--------------------------------------------------------------
+3)PRIME BETWEEN RANGR
