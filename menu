@@ -1,0 +1,148 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Analyzer{
+    static  Scanner sc=new Scanner(System.in);
+    static int size;
+    static int[] arr;
+    static int choice;
+    
+    
+    public static void main(String[] args){
+        while(true){
+        display();
+        choiceInput();
+        getUserInput();
+        printing();
+        operations();
+        }
+    }
+    public static void display(){
+        System.out.print("1.minimum\n2.maximum\n3.average\n4.exit\n");
+        
+    }
+    public static void choiceInput(){
+        System.out.print("Enter choice:");
+        choice=sc.nextInt();
+        if(choice==4){
+            System.out.print("exiting");
+            System.exit(0);
+        }
+    }
+    public static void getUserInput(){
+         System.out.print("Enter size:");
+         size=sc.nextInt();
+          System.out.print("Enter elements:");
+         arr=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+    }
+    public static void printing(){
+        for(int i=0;i<size;i++){
+            System.out.print(arr[i]);
+        }
+    }
+    public static void operations(){
+        switch(choice){
+            case 1:
+                System.out.print("\nminimum:");
+                Arrays.sort(arr);
+                System.out.print(arr[0]);
+                break;
+            case 2:
+                System.out.print("\nmaximum:");
+                System.out.print(arr[size-1]);
+                break;
+            case 3:
+                System.out.print("\naverage:");
+                int sum=0;
+                for(int i=0;i<size;i++){
+                    sum=sum+arr[i];
+                }
+                System.out.print(sum/size-1);
+                break;
+            
+                
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+class Bank{
+    static Scanner sc=new Scanner(System.in);
+    static int choice;
+    static int amount;
+    public static void main(String[] args){
+        while(true){
+        display();
+        getUserInput();
+        operations();
+        }
+    }
+    public static void display(){
+        System.out.print("\n1.Deposit\n2.Withdrawl\n3.Balance\n4.Exit\n");
+    }
+    public static void getUserInput(){
+        System.out.print("Enter your choice:");
+        choice=sc.nextInt();
+       
+    }
+    public static void getAmount(){
+        System.out.print("enter amount:");
+         amount=sc.nextInt();
+    }
+    public static void operations(){
+        Transactions ts=new Transactions();
+        switch(choice){
+            case 1:
+                System.out.print("\nDeposit selected\n");
+                getAmount();
+                ts.deposit(amount);
+                break;
+            case 2:
+                System.out.print("\nWithdrawl selected\n");
+                getAmount();
+                ts.withdrawl(amount);
+                break;
+            case 3:
+                System.out.print("\nBalance selected\n");
+                System.out.print("Account Balance"+ts.balance);
+                break;
+            case 4:
+                System.out.print("Exiting");
+                System.exit(0);
+        }
+    }
+}
+class Transactions{
+    Scanner sc=new Scanner(System.in);
+    static int balance=1000;
+    public static void deposit(int amount){
+        balance=balance+amount;
+    }
+    public static void withdrawl(int amount){
+        if(amount<=balance){
+        balance=balance-amount;
+        }
+        else{
+           System.out.print("Insufficient balance");
+        }
+    }
+    public static int balance(int amount){
+        return balance;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
