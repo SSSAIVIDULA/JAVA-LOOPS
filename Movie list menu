@@ -1,0 +1,102 @@
+import java.util.Scanner;
+class Movies{
+    
+    
+    static Scanner sc=new Scanner(System.in);
+    static int choice;
+    
+    
+    public static void main(String[] args){
+        while(true){
+        showMenu();
+        getUser();
+        operation();
+        }
+        
+    }
+    public static void showMenu(){
+        System.out.print("\n1.Add a movie\n2.Get all movies\n3.delete a movie\n4.exit\n");
+    }
+    public static void getUser(){
+        System.out.print("Enter choice : ");
+        choice=sc.nextInt();
+    }
+    public static void operation(){
+        switch(choice){
+        case 1:
+            System.out.print("Add a movie is selected\n");
+            IndividualOperation.addMovie();
+            break;
+        case 2:
+            System.out.print("Get movie list is selected\n");
+            IndividualOperation.getMovies();
+            break;
+        
+        case 3:
+            System.out.print("Delete a movie is selected\n");
+            IndividualOperation.deleteMovie();
+            break;
+        case 4:
+            System.out.print("exiting...");
+            System.exit(0);
+            
+    }
+    }
+}
+class IndividualOperation{
+    static String[] movieList= new String[10];
+    static int count=0;
+    static Scanner sc=new Scanner(System.in);
+    public static void addMovie(){
+        System.out.print("Add a movie name :");
+        String newMovie=sc.nextLine();
+        movieList[count++]=newMovie;
+        System.out.print("Movie added\n");
+        if(count>=10){
+            System.out.print("full . so exiting");
+            System.exit(0);
+        }
+    }
+    public static void getMovies(){
+        for(String movie:movieList){
+            if(movie!=null){
+                System.out.print(" ");
+            System.out.print(movie);
+            }
+        }
+    }
+    public static void deleteMovie(){
+        System.out.print("Enter a movie to delete : ");
+        String toDelete=sc.next();
+        String[] newList=new String[movieList.length];
+        int newCount=0;
+        for(String movie:movieList){
+            if(movie != null && !movie.equalsIgnoreCase(toDelete)){
+               newList[newCount++]=movie ;
+            }
+        }
+        movieList=newList;
+        count=newCount;
+        
+        
+    }
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
