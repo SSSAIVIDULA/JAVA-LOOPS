@@ -1,0 +1,29 @@
+class Info{
+    public String name;
+    private int rollno;
+    private String contact;
+    
+    public void setContact(String contact){
+        this.contact=contact;
+    }
+    
+    public String getContact(){
+        return this.contact;
+    }
+    public void setRollno(int rollno){
+        this.rollno=rollno;
+    }
+    public int getRollno(){
+        return this.rollno;
+    }
+    
+}
+class Main{
+    public static void main(String[] args){
+        Info info=new Info();
+        info.name="sai";
+        info.setRollno(12);
+        info.setContact("236541789");
+        System.out.print("name:"+info.name+"rollno:"+info.getRollno()+"contact:"+info.getContact());
+    }
+}
